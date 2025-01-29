@@ -1,10 +1,11 @@
 const options = ['rock', 'paper', 'scissors'];
 
+//Function that gets Computer choice//
 function getComputerChoice(){
     const choice = options[Math.floor(Math.random() * options.length)];
     return choice;
 }
-
+//Function to check the winner of the round//
 function checkWinner(playerSelection, computerSelection){
     if(playerSelection == computerSelection){
         return 'Tie';
@@ -20,6 +21,8 @@ function checkWinner(playerSelection, computerSelection){
         return 'Computer';
     }
 }
+
+//Function that plays a round of the game//
 function playRound(playerSelection, computerSelection){
     const result = checkWinner(playerSelection, computerSelection);
     if (result == 'Tie'){
@@ -33,6 +36,7 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
+//Function that prompts player and gets player choice//
 function getPlayerChoice(){
     let choice = prompt('Enter Rock, Paper or Scissors').toLowerCase();
     while (!options.includes(choice)){
@@ -41,6 +45,7 @@ function getPlayerChoice(){
     return choice;
 }
 
+//Function that calculates player and computer scores and determines the winner of the game//
 function game(){
     let playerScore = 0;
     let computerScore = 0;
